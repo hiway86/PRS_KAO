@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/D:/Source/DotNet/ParkingRepairSystemKAO/MIS/DeviceCheck_Q.aspx" hash="9a2f2516e" filehash="25456d8fc951a8e3" flags="110000" assembly="App_Web_nswlffpv" type="ASP.mis_devicecheck_q_aspx">
+    <filedeps>
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/checkpass.inc" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/MIS/DeviceCheck_Q.aspx" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/MIS/DeviceCheck_Q.aspx.cs" />
+    </filedeps>
+</preserve>

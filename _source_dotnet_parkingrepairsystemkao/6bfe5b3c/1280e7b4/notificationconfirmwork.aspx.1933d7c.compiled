@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/D:/Source/DotNet/ParkingRepairSystemKAO/Report/NotificationConfirmWork.aspx" hash="9a2f2516e" filehash="2015464aa75918a6" flags="110000" assembly="App_Web_yxas322n" type="ASP.report_notificationconfirmwork_aspx">
+    <filedeps>
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/checkpass.inc" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/Report/NotificationConfirmWork.aspx" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/Report/NotificationConfirmWork.aspx.cs" />
+    </filedeps>
+</preserve>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/D:/Source/DotNet/ParkingRepairSystemKAO/MIS/RegionList.aspx" hash="9a2f2516e" filehash="a280db40da2d8ef2" flags="110000" assembly="App_Web_nswlffpv" type="ASP.mis_regionlist_aspx">
+    <filedeps>
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/checkpass.inc" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/MIS/RegionList.aspx" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/MIS/RegionList.aspx.cs" />
+    </filedeps>
+</preserve>

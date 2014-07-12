@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/D:/Source/DotNet/ParkingRepairSystemKAO/MIS/Project_AMDQ.aspx" hash="9a2f2516e" filehash="fa4881b2ed294e47" flags="110000" assembly="App_Web_nswlffpv" type="ASP.mis_project_amdq_aspx">
+    <filedeps>
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/checkpass.inc" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/MIS/Project_AMDQ.aspx" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/MIS/Project_AMDQ.aspx.cs" />
+    </filedeps>
+</preserve>

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/D:/Source/DotNet/ParkingRepairSystemKAO/Report/ReportReturnManage.aspx" hash="9a2f2516e" filehash="b0fde160f9840eb2" flags="110000" assembly="App_Web_yxas322n" type="ASP.report_reportreturnmanage_aspx">
+    <filedeps>
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/checkpass.inc" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/Report/ReportReturnManage.aspx" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/Report/ReportReturnManage.aspx.cs" />
+    </filedeps>
+</preserve>

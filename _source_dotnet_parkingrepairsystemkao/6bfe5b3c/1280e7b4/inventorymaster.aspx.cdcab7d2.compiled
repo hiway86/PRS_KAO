@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/D:/Source/DotNet/ParkingRepairSystemKAO/Inventorymaster.aspx" hash="9a2f2516e" filehash="c343e352340c1632" flags="110000" assembly="App_Web_kugghpdz" type="ASP.inventorymaster_aspx">
+    <filedeps>
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/Inventorymaster.aspx" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/Inventorymaster.aspx.cs" />
+    </filedeps>
+</preserve>

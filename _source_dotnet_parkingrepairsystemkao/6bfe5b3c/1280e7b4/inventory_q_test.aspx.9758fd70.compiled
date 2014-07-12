@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/D:/Source/DotNet/ParkingRepairSystemKAO/Inventory/Inventory_Q_Test.aspx" hash="9a2f2516e" filehash="2c0b1043f32589e1" flags="110000" assembly="App_Web_0jpjlz4f" type="ASP.inventory_inventory_q_test_aspx">
+    <filedeps>
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/Inventory/Inventory_Q_Test.aspx" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/Inventory/Inventory_Q_Test.aspx.cs" />
+    </filedeps>
+</preserve>

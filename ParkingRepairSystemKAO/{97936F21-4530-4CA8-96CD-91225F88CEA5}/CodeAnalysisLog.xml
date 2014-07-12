@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 11.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="11.0">
+ <Targets>
+  <Target Name="C:\Users\59271\AppData\Local\Temp\tmpD750.tmp.cadir\bin\App_Code.dll">
+   <Modules>
+    <Module Name="app_code.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="Email" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2014-07-12 07:09:32Z" FixCategory="DependsOnFix">
+           <Issue Name="DependsOnFix" Certainty="95" Level="CriticalError">在 'Email' 上實作 IDisposable，因為它會建立下列 IDisposable 型別的成員: 'MailMessage', 'SmtpClient'。如果先前已發佈 'Email'，則把實作 IDisposable 的成員加入這個型別會被視為現有消費者的中斷變更。</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="MROSDataSet_BreakdownCount" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2014-07-12 07:09:32Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">將 GetObjectData 的實作加入型別 'MROSDataSet_BreakdownCount'。</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="MROSDataSet_BreakdownCount+View_BreakDownCountsDataTable" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240" Status="Active" Created="2014-07-12 07:09:32Z" FixCategory="NonBreaking">
+           <Issue Certainty="60" Level="Error">將 GetObjectData 的實作加入型別 'MROSDataSet_BreakdownCount.View_BreakDownCountsDataTable'。</Issue>
+          </Message>
+         </Messages>
+        </Type>
+        <Type Name="SQLDB" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Messages>
+          <Message TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001" Status="Active" Created="2014-07-12 07:09:32Z" FixCategory="DependsOnFix">
+           <Issue Name="DependsOnFix" Certainty="95" Level="CriticalError">在 'SQLDB' 上實作 IDisposable，因為它會建立下列 IDisposable 型別的成員: 'SqlConnection'。如果先前已發佈 'SQLDB'，則把實作 IDisposable 的成員加入這個型別會被視為現有消費者的中斷變更。</Issue>
+          </Message>
+         </Messages>
+         <Members>
+          <Member Name="#Delete(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="必須檢視 SQL 查詢中是否有安全性弱點" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-07-12 07:09:32Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="d:\Source\DotNet\ParkingRepairSystemKAO\App_Code\Util\Database" File="SQLDB.cs" Line="272">傳遞給 'SQLDB.Delete(string, string)' 中的 'SqlCommand.SqlCommand(string, SqlConnection)' 的查詢字串可能包含下列變數 'table', '_rowFilter'。如果這其中任何變數來自使用者輸入，請考慮使用預存程序或參數化 SQL 查詢，而不要用字串串連的方式建立查詢。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ExecuteStatement(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="必須檢視 SQL 查詢中是否有安全性弱點" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-07-12 07:09:32Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="d:\Source\DotNet\ParkingRepairSystemKAO\App_Code\Util\Database" File="SQLDB.cs" Line="303">傳遞給 'SQLDB.ExecuteStatement(string)' 中的 'SqlCommand.SqlCommand(string, SqlConnection)' 的查詢字串可能包含下列變數 '_strSQL'。如果這其中任何變數來自使用者輸入，請考慮使用預存程序或參數化 SQL 查詢，而不要用字串串連的方式建立查詢。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Save(System.Data.DataSet)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="必須檢視 SQL 查詢中是否有安全性弱點" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-07-12 07:09:32Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="d:\Source\DotNet\ParkingRepairSystemKAO\App_Code\Util\Database" File="SQLDB.cs" Line="201">傳遞給 'SQLDB.Save(DataSet)' 中的 'SqlCommand.SqlCommand(string, SqlConnection)' 的查詢字串可能包含下列變數 'strSQL'。如果這其中任何變數來自使用者輸入，請考慮使用預存程序或參數化 SQL 查詢，而不要用字串串連的方式建立查詢。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#Select(System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="必須檢視 SQL 查詢中是否有安全性弱點" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-07-12 07:09:32Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="d:\Source\DotNet\ParkingRepairSystemKAO\App_Code\Util\Database" File="SQLDB.cs" Line="121">傳遞給 'SQLDB.Select(string, string, string)' 中的 'SqlDataAdapter.SqlDataAdapter(string, SqlConnection)' 的查詢字串可能包含下列變數 'strSQL'。如果這其中任何變數來自使用者輸入，請考慮使用預存程序或參數化 SQL 查詢，而不要用字串串連的方式建立查詢。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SelectQuery(System.String,System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="必須檢視 SQL 查詢中是否有安全性弱點" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-07-12 07:09:32Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="d:\Source\DotNet\ParkingRepairSystemKAO\App_Code\Util\Database" File="SQLDB.cs" Line="166">傳遞給 'SQLDB.SelectQuery(string, string)' 中的 'SqlDataAdapter.SqlDataAdapter(string, SqlConnection)' 的查詢字串可能包含下列變數 '_strSQL'。如果這其中任何變數來自使用者輸入，請考慮使用預存程序或參數化 SQL 查詢，而不要用字串串連的方式建立查詢。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#SelectSQL(System.String)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="必須檢視 SQL 查詢中是否有安全性弱點" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-07-12 07:09:32Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="d:\Source\DotNet\ParkingRepairSystemKAO\App_Code\Util\Database" File="SQLDB.cs" Line="388">傳遞給 'SQLDB.SelectSQL(string)' 中的 'SqlDataAdapter.SqlDataAdapter(string, SqlConnection)' 的查詢字串可能包含下列變數 'strSQL'。如果這其中任何變數來自使用者輸入，請考慮使用預存程序或參數化 SQL 查詢，而不要用字串串連的方式建立查詢。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\59271\AppData\Local\Temp\tmpD750.tmp.cadir\bin\App_Web_0jpjlz4f.dll">
+   <Modules>
+    <Module Name="app_web_0jpjlz4f.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="Inventory_Default" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#DBInit()" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="必須檢視 SQL 查詢中是否有安全性弱點" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-07-12 07:09:32Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="d:\Source\DotNet\ParkingRepairSystemKAO\Inventory" File="InvenTory_Q.aspx.cs" Line="67">傳遞給 'Inventory_Default.DBInit()' 中的 'SqlDataAdapter.SqlDataAdapter(string, SqlConnection)' 的查詢字串可能包含下列變數 'this.TextBox1.Text', 'this.TextBox2.Text'。如果這其中任何變數來自使用者輸入，請考慮使用預存程序或參數化 SQL 查詢，而不要用字串串連的方式建立查詢。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Inventory_Inventory_Q_Test" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#DBInit()" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="必須檢視 SQL 查詢中是否有安全性弱點" Category="Microsoft.Security" CheckId="CA2100" Status="Active" Created="2014-07-12 07:09:32Z" FixCategory="DependsOnFix">
+             <Issue Name="WithNonLiterals" Certainty="75" Level="Warning" Path="d:\Source\DotNet\ParkingRepairSystemKAO\Inventory" File="Inventory_Q_Test.aspx.cs" Line="69">傳遞給 'Inventory_Inventory_Q_Test.DBInit()' 中的 'SqlDataAdapter.SqlDataAdapter(string, SqlConnection)' 的查詢字串可能包含下列變數 'this.TextBox1.Text', 'this.TextBox2.Text'。如果這其中任何變數來自使用者輸入，請考慮使用預存程序或參數化 SQL 查詢，而不要用字串串連的方式建立查詢。</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+  <Target Name="C:\Users\59271\AppData\Local\Temp\tmpD750.tmp.cadir\bin\App_Web_adghwhjp.dll">
+   <Modules>
+    <Module Name="app_web_adghwhjp.dll">
+     <Namespaces>
+      <Namespace Name="">
+       <Types>
+        <Type Name="Statistics_BreakDownCount_Q" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#cmd_ExportExcel_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="不要多次處置物件的 Dispose 方法" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2014-07-12 07:09:32Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\Source\DotNet\ParkingRepairSystemKAO\Statistics" File="BreakDownCount_Q.aspx.cs" Line="310">方法 'Statistics_BreakDownCount_Q.cmd_ExportExcel_Click(object, EventArgs)' 中可以多次處置物件 'ms'。若要避免產生 System.ObjectDisposedException，您不應該對物件呼叫多次 Dispose。: Lines: 310</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Statistics_BreakDownReason" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#cmd_ExportExcel_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="不要多次處置物件的 Dispose 方法" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2014-07-12 07:09:32Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\Source\DotNet\ParkingRepairSystemKAO\Statistics" File="BreakDownReason_Q.aspx.cs" Line="301">方法 'Statistics_BreakDownReason.cmd_ExportExcel_Click(object, EventArgs)' 中可以多次處置物件 'ms'。若要避免產生 System.ObjectDisposedException，您不應該對物件呼叫多次 Dispose。: Lines: 301</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Statistics_DeviceRepairTime_Q" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#cmd_ExportExcel_Click(System.Object,System.EventArgs)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="不要多次處置物件的 Dispose 方法" Category="Microsoft.Usage" CheckId="CA2202" Status="Active" Created="2014-07-12 07:09:32Z" FixCategory="DependsOnFix">
+             <Issue Certainty="75" Level="Warning" Path="d:\Source\DotNet\ParkingRepairSystemKAO\Statistics" File="DeviceRepairTime_Q.aspx.cs" Line="292">方法 'Statistics_DeviceRepairTime_Q.cmd_ExportExcel_Click(object, EventArgs)' 中可以多次處置物件 'ms'。若要避免產生 System.ObjectDisposedException，您不應該對物件呼叫多次 Dispose。: Lines: 292</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="ImplementISerializableCorrectly" Category="Microsoft.Usage" CheckId="CA2240">
+   <Name>必須正確實作  ISerializable</Name>
+   <Description>如果型別可以指定為 ISerializable，它應該實作 GetObjectData。對於非密封型別，GetObjectData 方法應該可以由衍生型別呼叫和覆寫。</Description>
+   <Resolution Name="Default">將 GetObjectData 的實作加入型別 {0}。</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182342(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="60">Error</MessageLevel>
+   <File Name="usagerules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="TypesThatOwnDisposableFieldsShouldBeDisposable" Category="Microsoft.Design" CheckId="CA1001">
+   <Name>具有 Dispose 方法的型別應該明確釋放資源</Name>
+   <Description>宣告可處置成員的型別也應該實作 IDisposable。如果型別並未擁有任何 Unmanaged 資源，則切勿在此型別上實作完成項。</Description>
+   <Resolution Name="DependsOnFix">在 {0} 上實作 IDisposable，因為它會建立下列 IDisposable 型別的成員: {1}。如果先前已發佈 {0}，則把實作 IDisposable 的成員加入這個型別會被視為現有消費者的中斷變更。</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182172(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">CriticalError</MessageLevel>
+   <File Name="designrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="不要多次處置物件的 Dispose 方法" Category="Microsoft.Usage" CheckId="CA2202">
+   <Name>不要多次處置物件的 Dispose 方法</Name>
+   <Description>正確實作的 Dispose 方法即使呼叫多次，也不會擲回例外狀況。但不保證一定如此，為避免產生 System.ObjectDisposedException，您不應該對物件呼叫多次 Dispose。</Description>
+   <Resolution Name="Default">方法 {1} 中可以多次處置物件 {0}。若要避免產生 System.ObjectDisposedException，您不應該對物件呼叫多次 Dispose。: Lines: 310</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182334(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+  <Rule TypeName="必須檢視 SQL 查詢中是否有安全性弱點" Category="Microsoft.Security" CheckId="CA2100">
+   <Name>必須檢視 SQL 查詢中是否有安全性弱點</Name>
+   <Description>根據使用者輸入建構而成的 SQL 命令字串容易受到 SQL 插入式攻擊的威脅。Microsoft SQL Server 和其他資料庫伺服器支援預存程序和參數化 SQL 查詢，可減少插入式攻擊的風險。</Description>
+   <Resolution Name="WithNonLiterals">傳遞給 {1} 中的 {0} 的查詢字串可能包含下列變數 {2}。如果這其中任何變數來自使用者輸入，請考慮使用預存程序或參數化 SQL 查詢，而不要用字串串連的方式建立查詢。</Resolution>
+   <Owner>RuleOwner</Owner>
+   <Url>http://msdn.microsoft.com/library/ms182310(VS.100).aspx</Url>
+   <Email />
+   <MessageLevel Certainty="75">Warning</MessageLevel>
+   <File Name="dataflowrules.dll" Version="11.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">分類</String>
+  <String Key="Certainty">確實性</String>
+  <String Key="CollapseAll">全部摺疊</String>
+  <String Key="CheckId">檢查 ID</String>
+  <String Key="Error">錯誤</String>
+  <String Key="Errors">錯誤</String>
+  <String Key="ExpandAll">全部展開</String>
+  <String Key="Help">說明</String>
+  <String Key="Line">行</String>
+  <String Key="Messages">訊息</String>
+  <String Key="LocationNotStoredInPdb">[位置未儲存在 PDB]</String>
+  <String Key="Project">專案</String>
+  <String Key="Resolution">解析度</String>
+  <String Key="Rule">規則</String>
+  <String Key="RuleFile">規則檔</String>
+  <String Key="RuleDescription">規則描述</String>
+  <String Key="Source">來源</String>
+  <String Key="Status">狀態</String>
+  <String Key="Target">目標</String>
+  <String Key="Warning">警告</String>
+  <String Key="Warnings">警告</String>
+  <String Key="ReportTitle">程式碼分析報告</String>
+ </Localized>
+</FxCopReport>

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/D:/Source/DotNet/ParkingRepairSystemKAO/VDCheck/VDTimerCheck.aspx" hash="9a2f2516e" filehash="668c470da3eb73ca" flags="110000" assembly="App_Web_djbxjoer" type="ASP.vdcheck_vdtimercheck_aspx">
+    <filedeps>
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/VDCheck/VDTimerCheck.aspx" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/VDCheck/VDTimerCheck.aspx.cs" />
+    </filedeps>
+</preserve>

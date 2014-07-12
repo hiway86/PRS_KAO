@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/D:/Source/DotNet/ParkingRepairSystemKAO/PTWebServiceReference.asmx" hash="ffffffffb64c6f15" filehash="fffff2670842658a" flags="130000" assembly="App_Code" type="PTWebServiceReference">
+    <filedeps>
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/PTWebServiceReference.asmx" />
+    </filedeps>
+</preserve>

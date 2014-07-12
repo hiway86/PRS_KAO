@@ -1,0 +1,671 @@
+﻿using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using System.Reflection;
+using System.IO;
+using Excel = Microsoft.Office.Interop.Excel;
+using NDde;
+using NDde.Client;
+using System.Diagnostics;
+
+/// <summary>
+/// ExcelReport 的摘要描述
+/// </summary>
+public class ExcelReport : System.Web.UI.Page
+{
+    object missing = Missing.Value;
+    Excel.ApplicationClass app = null;
+    Excel.Workbook workBook = null;
+    Excel.Worksheet ws = null;
+    string FileName = "";
+    //temp path
+    protected string sDirPath = System.Configuration.ConfigurationManager.AppSettings["Report.temp.path"];
+    //excel path
+    protected string evFilePath = System.Configuration.ConfigurationManager.AppSettings["Report.excel.path"];
+
+
+    public ExcelReport(string TemplateName)
+    {
+        app = new Excel.ApplicationClass();
+        app.Visible = false;
+        workBook = app.Workbooks.Open(Server.MapPath("../ExcelTemplate/") + TemplateName + ".xls", missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing, missing);
+        ws = (Microsoft.Office.Interop.Excel.Worksheet)workBook.Worksheets.get_Item(1);
+    }
+
+    /// <summary>
+    /// 插入row，插入rowIndex之前，rowIndex會往下移
+    /// </summary>
+    public void InsertRows(int sheetIndex, int rowIndex, int count)
+    {
+        try
+        {
+            if (sheetIndex > workBook.Sheets.Count || sheetIndex < 1 || rowIndex < 1)
+            {
+                return;
+            }
+            Excel.Worksheet workSheet = (Microsoft.Office.Interop.Excel.Worksheet)workBook.Worksheets.get_Item(sheetIndex);
+            Excel.Range range = (Excel.Range)workSheet.Rows[rowIndex, this.missing];
+
+            for (int i = 0; i < count; i++)
+            {
+                range.Insert(Excel.XlDirection.xlDown, missing);
+            }
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+
+    /// <summary>
+    /// 插入column，插入colIndex之前，colIndex會往右移
+    /// </summary>
+    public void InsertCols(int sheetIndex, int colIndex, int count)
+    {
+        try
+        {
+            if (sheetIndex > workBook.Sheets.Count || sheetIndex < 1 || colIndex < 1)
+            {
+                return;
+            }
+            Excel.Worksheet workSheet = (Microsoft.Office.Interop.Excel.Worksheet)workBook.Worksheets.get_Item(sheetIndex);
+            Excel.Range range = (Excel.Range)workSheet.Columns[colIndex, this.missing];
+
+            for (int i = 0; i < count; i++)
+            {
+                range.Insert(Excel.XlDirection.xlToRight, missing);
+            }
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+
+    /// <summary>
+    /// 刪除column，colIndex會往左移
+    /// </summary>
+    public void DeleteCols(int sheetIndex, int colIndex, int count)
+    {
+        try
+        {
+            if (sheetIndex > workBook.Sheets.Count || sheetIndex < 1 || colIndex < 1 || count < 1)
+            {
+                return;
+            }
+            Excel.Worksheet workSheet = (Microsoft.Office.Interop.Excel.Worksheet)workBook.Worksheets.get_Item(sheetIndex);
+
+            for (int i = 0; i < count; i++)
+            {
+                Excel.Range range = (Excel.Range)workSheet.Columns[colIndex, this.missing];
+                range.Delete(Excel.XlDirection.xlToLeft);
+            }
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }    
+    
+    /// <summary>
+    /// 取得Sheet總數
+    /// </summary>
+    public int GetSheetCount()
+    {
+        try
+        {
+            return workBook.Worksheets.Count;
+        }
+        catch (Exception e)
+        {
+            return 0;
+        }
+    }
+
+    /// <summary>
+    /// 設定Sheet名稱
+    /// </summary>
+    public void SetSheetName(int sheetIndex, string name)
+    {
+        try
+        {
+            Excel.Worksheet workSheet = (Excel.Worksheet)workBook.Worksheets.get_Item(sheetIndex);
+
+            if (name.Length > 0)
+                workSheet.Name = name;
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+
+    /// <summary>
+    /// 設定字型大小
+    /// </summary>
+    public void SetFontSize(int sheetIndex, string startCell, string endCell, int size)
+    {
+        try
+        {
+            Excel.Worksheet workSheet = (Excel.Worksheet)workBook.Worksheets.get_Item(sheetIndex);
+            Excel.Range range1 = workSheet.get_Range(startCell, endCell);
+
+            range1.Cells.Font.Size = size;
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+
+    /// <summary>
+    /// 設定範圍寬與高
+    /// </summary>
+    public void SetRangeProperty(int sheetIndex, string startCell, string endCell, double columnWidth, double rowHeight)
+    {
+        try
+        {
+            Excel.Worksheet workSheet = (Excel.Worksheet)workBook.Worksheets.get_Item(sheetIndex);
+            Excel.Range range = workSheet.get_Range(startCell, endCell);
+
+            if (columnWidth >= 0)
+                range.ColumnWidth = columnWidth;
+
+            if (rowHeight >= 0)
+                range.RowHeight = rowHeight;
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+
+    /// <summary>
+    /// 設定作用中Sheet
+    /// </summary>
+    public void SetAvtiveSheet(int sheetIndex)
+    {
+        try
+        {
+            Excel.Worksheet workSheet = (Excel.Worksheet)workBook.Worksheets.get_Item(sheetIndex);
+            workSheet.Activate();
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+
+    /// <summary>
+    /// Range範圍複製，目標格將會被取代(可先插入Rows)，targetCell請勿與startCell至endCell之範圍重覆
+    /// </summary>
+    public void RangeCopy(int sheetIndex, string startCell, string endCell, string targetCell)
+    {
+        if (sheetIndex > workBook.Sheets.Count)
+        {
+            return;
+        }
+
+        try
+        {
+            Excel.Worksheet workSheet = (Excel.Worksheet)workBook.Worksheets.get_Item(sheetIndex);
+            Excel.Range range1 = workSheet.get_Range(startCell, endCell);
+            Excel.Range range2 = workSheet.get_Range(targetCell, this.missing);
+
+            range1.Copy(range2);
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+
+    /// <summary>
+    /// Range範圍清空
+    /// </summary>
+    public void RangeClear(int sheetIndex, string startCell, string endCell)
+    {
+        if (sheetIndex > workBook.Sheets.Count)
+        {
+            return;
+        }
+
+        try
+        {
+            Excel.Worksheet workSheet = (Excel.Worksheet)workBook.Worksheets.get_Item(sheetIndex);
+            Excel.Range range1 = workSheet.get_Range(startCell, endCell);
+
+            range1.ClearContents();
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+
+    /// <summary>
+    /// 複製報表(整個sheet)
+    /// </summary>
+    public void CreateWorkSheet(int sheetIndex, int createCount)
+    {
+        try
+        {
+            if (sheetIndex > workBook.Sheets.Count || sheetIndex < 1)
+            {
+                return;
+            }
+            Excel.Worksheet wws = (Microsoft.Office.Interop.Excel.Worksheet)workBook.Worksheets.get_Item(sheetIndex);
+
+            for (int i = 0; i < createCount; i++)
+            {
+                wws.Copy(missing, (Microsoft.Office.Interop.Excel.Worksheet)workBook.Worksheets.get_Item(i + sheetIndex));
+            }
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+
+    public void FillData(DataTable dt, int beginrow, int begincolumn)     //塞入datatable至excel表
+    {
+        try
+        {
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                for (int j = 0; j < dt.Columns.Count; j++)
+                {
+                    ws.Cells[i + beginrow, j + begincolumn] = dt.Rows[i][j].ToString();
+                }
+            }
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+
+    /// <summary>
+    /// 產生相同的報表，以第一個sheet為主，後面的sheet會刪除
+    /// </summary>
+    public void FillData(int row, int column, string content, int sheetIdx)     //塞入某內容至某個cell
+    {
+        try
+        {
+            if (workBook.Worksheets.Count >= sheetIdx)
+            {
+                Excel.Worksheet wss = (Microsoft.Office.Interop.Excel.Worksheet)workBook.Worksheets.get_Item(sheetIdx);
+                wss.Cells[row, column] = content;
+            }
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+
+    /// <summary>
+    /// 套用style，請注意，若有合併儲存格，startCell跟endCell要完整包含此合併儲存格，不然會有錯誤產生
+    /// </summary>
+    public void ApplyRangeStyle(string startCell, string endCell, string fontName, int fontSize, System.Drawing.Color fontColor, System.Drawing.Color interiorColor, int sheetIdx)
+    {
+        try
+        {
+
+            if (workBook.Worksheets.Count >= sheetIdx)
+            {
+                Excel.Worksheet wss = (Microsoft.Office.Interop.Excel.Worksheet)workBook.Worksheets.get_Item(sheetIdx);
+
+                object missingValue = Type.Missing;
+                Excel.Range rng = wss.get_Range(startCell, endCell);
+
+                Excel.Style style;
+
+                try
+                {
+                    style = workBook.Styles["NewStyle"];
+                }
+                // Style doesn't exist yet.
+                catch
+                {
+                    style = workBook.Styles.Add("NewStyle", missingValue);
+                    style.Font.Name = fontName;
+                    style.Font.Size = fontSize;
+                    style.Font.Color = System.Drawing.ColorTranslator.ToOle(fontColor);
+                    style.Interior.Color = System.Drawing.ColorTranslator.ToOle(interiorColor);
+                    style.Interior.Pattern = Excel.XlPattern.xlPatternSolid;
+                    //System.Drawing.ColorTranslator.ToOle
+                }
+
+                rng.Style = "NewStyle";
+                rng.Columns.AutoFit();
+            }
+
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+
+    /// <summary>
+    /// 套用style，請注意，若有合併儲存格，startCell跟endCell要完整包含此合併儲存格，不然會有錯誤產生
+    /// </summary>
+    public void ApplyRangeStyle(string startCell, string endCell, string fontName, int fontSize, System.Drawing.Color fontColor, System.Drawing.Color interiorColor)
+    {
+        try
+        {
+
+            object missingValue = Type.Missing;
+            Excel.Range rng = ws.get_Range(startCell, endCell);
+
+            Excel.Style style;
+
+            try
+            {
+                style = workBook.Styles["NewStyle"];
+            }
+            // Style doesn't exist yet.
+            catch
+            {
+                style = workBook.Styles.Add("NewStyle", missingValue);
+                style.Font.Name = fontName;
+                style.Font.Size = fontSize;
+                style.Font.Color = System.Drawing.ColorTranslator.ToOle(fontColor);
+                style.Interior.Color = System.Drawing.ColorTranslator.ToOle(interiorColor);
+                style.Interior.Pattern = Excel.XlPattern.xlPatternSolid;
+                //System.Drawing.ColorTranslator.ToOle
+            }
+
+            rng.Style = "NewStyle";
+            rng.Columns.AutoFit();
+
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+
+    /// <summary>
+    /// 套用單一儲存格，不能為合併之儲存格
+    /// </summary>
+    public void ApplyStyle(string targetCell, string fontName, int fontSize, System.Drawing.Color fontColor, System.Drawing.Color interiorColor)
+    {
+        try
+        {
+
+            object missingValue = Type.Missing;
+            Excel.Range rng = ws.get_Range(targetCell, missing);
+
+            Excel.Style style;
+
+            try
+            {
+                style = workBook.Styles["NewStyle"];
+            }
+            // Style doesn't exist yet.
+            catch
+            {
+                style = workBook.Styles.Add("NewStyle", missingValue);
+                style.Font.Name = fontName;
+                style.Font.Size = fontSize;
+                style.Font.Color = System.Drawing.ColorTranslator.ToOle(fontColor);
+                style.Interior.Color = System.Drawing.ColorTranslator.ToOle(interiorColor);
+                style.Interior.Pattern = Excel.XlPattern.xlPatternSolid;
+                //System.Drawing.ColorTranslator.ToOle
+            }
+
+            rng.Style = "NewStyle";
+            rng.Columns.AutoFit();
+
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+
+    /// <summary>
+    /// 套用單一儲存格，不能為合併之儲存格
+    /// </summary>
+    public void ApplyStyle(string targetCell, string fontName, int fontSize, System.Drawing.Color fontColor, System.Drawing.Color interiorColor, int sheetIdx)
+    {
+        try
+        {
+
+            if (workBook.Worksheets.Count >= sheetIdx)
+            {
+                Excel.Worksheet wss = (Microsoft.Office.Interop.Excel.Worksheet)workBook.Worksheets.get_Item(sheetIdx);
+
+                object missingValue = Type.Missing;
+                Excel.Range rng = wss.get_Range(targetCell, missing);
+
+                Excel.Style style;
+
+                try
+                {
+                    style = workBook.Styles["NewStyle"];
+                }
+                // Style doesn't exist yet.
+                catch
+                {
+                    style = workBook.Styles.Add("NewStyle", missingValue);
+                    style.Font.Name = fontName;
+                    style.Font.Size = fontSize;
+                    style.Font.Color = System.Drawing.ColorTranslator.ToOle(fontColor);
+                    style.Interior.Color = System.Drawing.ColorTranslator.ToOle(interiorColor);
+                    style.Interior.Pattern = Excel.XlPattern.xlPatternSolid;
+                    //System.Drawing.ColorTranslator.ToOle
+                }
+
+                rng.Style = "NewStyle";
+                rng.Columns.AutoFit();
+            }
+
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+
+    /// <summary>
+    /// 合併儲存格
+    /// </summary>
+    public void Print(int sheetIndex)
+    {
+        try
+        {
+            if (sheetIndex > workBook.Sheets.Count || sheetIndex < 1)
+                return;
+
+            Excel.Worksheet ws = (Microsoft.Office.Interop.Excel.Worksheet)workBook.Worksheets.get_Item(sheetIndex);
+            ws.PrintOut(missing, missing, missing, false, missing, false, false, missing);
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+
+    /// <summary>
+    /// 合併儲存格
+    /// </summary>
+    public void MergeRange(int sheetIndex, string start_cell, string end_cell)
+    {
+        try
+        {
+            Excel.Worksheet ws = (Microsoft.Office.Interop.Excel.Worksheet)workBook.Worksheets.get_Item(sheetIndex);
+            Excel.Range range = ws.get_Range(start_cell, end_cell);
+            range.Merge(missing);
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+    /// <summary>
+    /// row column
+    /// </summary>
+    public void FillData(int row, int column, string content)     //塞入某內容至某個cell
+    {
+        try
+        {
+            ws.Cells[row, column] = content;
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+
+    public string GetCellLabel(int sheetIdx, int row, int column)     //塞入某內容至某個cell
+    {
+        try
+        {
+			Excel.Worksheet ws = (Microsoft.Office.Interop.Excel.Worksheet)workBook.Worksheets.get_Item(sheetIdx);
+
+            return ws.Labels(ws.Cells[row, column]).ToString();
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+
+    public string Report()  //產生server端report
+    {
+        Random Rnd = new Random();
+        string fileName = Rnd.Next(1000000, 9999999) + "";
+        ws.SaveAs(Server.MapPath("../Temp/") + fileName + ".xls", missing, missing, missing, missing, missing, missing, missing, missing, missing);
+        FileName = fileName;
+        return fileName + ".xls";
+    }
+
+    public void DrawBorder(int start_row, int start_column, int end_row, int end_column, int sheetIdx)//繪製上粗邊框
+    {
+        Excel.Worksheet ws = (Microsoft.Office.Interop.Excel.Worksheet)workBook.Worksheets.get_Item(sheetIdx);
+        //Excel.Worksheet wss = (Microsoft.Office.Interop.Excel.Worksheet)workBook.Worksheets.get_Item(sheetIdx);
+        ws.get_Range(ws.Cells[start_row, start_column], ws.Cells[end_row, end_column]).Borders.LineStyle = 1;
+        ws.get_Range(ws.Cells[start_row, start_column], ws.Cells[end_row, end_column]).Borders[Excel.XlBordersIndex.xlEdgeTop].Weight = Excel.XlBorderWeight.xlThick;
+        ws.get_Range(ws.Cells[start_row, start_column], ws.Cells[end_row, end_column]).Borders[Excel.XlBordersIndex.xlEdgeRight].Weight = Excel.XlBorderWeight.xlMedium;
+    }
+
+    public void DrawLeftBorder(int start_row, int start_column, int end_row, int end_column, int sheetIdx)//繪製左細線與上粗線邊框
+    {
+        Excel.Worksheet ws = (Microsoft.Office.Interop.Excel.Worksheet)workBook.Worksheets.get_Item(sheetIdx);
+        //Excel.Worksheet wss = (Microsoft.Office.Interop.Excel.Worksheet)workBook.Worksheets.get_Item(sheetIdx);
+        ws.get_Range(ws.Cells[start_row, start_column], ws.Cells[end_row, end_column]).Borders.LineStyle = 1;
+        ws.get_Range(ws.Cells[start_row, start_column], ws.Cells[end_row, end_column]).Borders[Excel.XlBordersIndex.xlEdgeLeft].Weight = Excel.XlBorderWeight.xlMedium;
+        ws.get_Range(ws.Cells[start_row, start_column], ws.Cells[end_row, end_column]).Borders[Excel.XlBordersIndex.xlEdgeTop].Weight = Excel.XlBorderWeight.xlThick;
+    }
+
+    public void DrawBorder(int start_row, int start_column, int end_row, int end_column, int sheetIdx, int linestyle)//繪製上邊框可傳入線的樣式
+    {
+        Excel.Worksheet ws = (Microsoft.Office.Interop.Excel.Worksheet)workBook.Worksheets.get_Item(sheetIdx);
+        //Excel.Worksheet wss = (Microsoft.Office.Interop.Excel.Worksheet)workBook.Worksheets.get_Item(sheetIdx);
+        ws.get_Range(ws.Cells[start_row, start_column], ws.Cells[end_row, end_column]).Borders[Excel.XlBordersIndex.xlEdgeTop].LineStyle = linestyle;
+        //ws.get_Range(ws.Cells[start_row, start_column], ws.Cells[end_row, end_column]).Borders[Excel.XlBordersIndex.xlEdgeTop].Weight = Excel.XlBorderWeight.xlThick;
+    }
+
+    /// <summary>
+    /// 設定儲存格格式為自動換行並設定字體大小
+    /// </summary>
+    public void WrapText(int sheetIndex, string start_cell, string end_cell,int fontSize)
+    {
+        try
+        {
+            Excel.Worksheet ws = (Microsoft.Office.Interop.Excel.Worksheet)workBook.Worksheets.get_Item(sheetIndex);
+            Excel.Range range = ws.get_Range(start_cell, end_cell);
+            range.WrapText = true;
+            range.Font.Size = (object)fontSize;
+        }
+        catch (Exception e)
+        {
+            throw e;
+        }
+    }
+
+    public void Close() //關閉相關物件及記憶體
+    {
+        workBook.Close(false, missing, false);
+        app.Workbooks.Close();
+        app.Application.Quit();
+        app.Quit();
+
+        System.Runtime.InteropServices.Marshal.ReleaseComObject(ws);
+        System.Runtime.InteropServices.Marshal.ReleaseComObject(workBook);
+        System.Runtime.InteropServices.Marshal.ReleaseComObject(app);
+
+        ws = null;
+        workBook = null;
+        app = null;
+
+        GC.Collect();
+        GC.WaitForPendingFinalizers();
+        //File.Delete(Server.MapPath("../Temp/") + FileName + ".xls");
+    }
+    /// <summary>
+    /// 列印檔案
+    /// </summary>
+    public void printExcel(string sFileName)
+    {
+        // 1. 判斷檔案是否存在
+        FileInfo fi = new FileInfo(sDirPath + sFileName);
+        if (fi.Exists == false) return;
+
+        // 2. 要列印 EXCEL 檔案的程式位置
+        //    Excel Viewer 在 C:\Program Files\Microsoft Office\Office12\XLVIEW.exe
+        //string evFilePath = @"C:\Program Files\Microsoft Office\Office12\XLVIEW.exe";
+
+        // 3. 初始化 DdeClint 類別物件 ddeClient
+        //    DdeClint(Server 名稱,string topic 名稱)
+        DdeClient ddeClient = new DdeClient("excel", "system");
+
+        Process process = null;
+        do
+        {
+            try
+            {
+                // 4. DDE Client 進行連結
+                if (ddeClient.IsConnected == false)
+                {
+                    ddeClient.Connect();
+                }
+            }
+            catch (DdeException)
+            {
+                // 5. 開啟 Excel Viewer
+                ProcessStartInfo info = new ProcessStartInfo(evFilePath);
+                info.WindowStyle = ProcessWindowStyle.Minimized;
+                info.UseShellExecute = true;
+                info.Arguments = sDirPath + sFileName;
+                process = Process.Start(info);
+                process.WaitForInputIdle();
+            }
+        } while (ddeClient.IsConnected == false && process.HasExited == false);
+
+
+
+        // 6. DDE 處理
+        try
+        {
+            ddeClient.Execute(string.Format(@"[Open(""{0}"")]", sDirPath + sFileName), 60000);  // 開啟 EXCEL 檔案
+            ddeClient.Execute("[Print()]", 60000);  // 列印 EXCEL 檔案
+            ddeClient.Execute("[Close()]", 60000);  // 關閉 EXCEL 檔案
+            ddeClient.Execute("[Quit()]", 60000); // 關閉 EXCEL 檔案
+        }
+        catch (Exception ex)
+        {
+            //string msg = ex.Message;
+        }
+    }
+
+}

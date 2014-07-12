@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root url="Main.aspx?sg=System" name="系統管理" describe="系統管理">
+  <Parent  url="System/AuthList.aspx" name="使用者權限管理" describe="使用者權限">
+    <Child   url="System/RoleProgramManage.aspx" name="功能權限列表" describe="功能權限列表"/>
+  </Parent>
+   <Parent  url="System/RoleList.aspx" name="系統角色管理" describe="系統角色管理">
+  </Parent>
+  <Parent  url="System/Loginchpwd.aspx" name="使用者變更密碼" describe="變更密碼">
+  </Parent>
+  </Root>

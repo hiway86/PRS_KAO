@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/D:/Source/DotNet/ParkingRepairSystemKAO/banner_ceci.aspx" hash="9a2f2516e" filehash="1e4e6126b206bf97" flags="110000" assembly="App_Web_kugghpdz" type="ASP.banner_ceci_aspx">
+    <filedeps>
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/banner_ceci.aspx" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/banner_ceci.aspx.cs" />
+    </filedeps>
+</preserve>

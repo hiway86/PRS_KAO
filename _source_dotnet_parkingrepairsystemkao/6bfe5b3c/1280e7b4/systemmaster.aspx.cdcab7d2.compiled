@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/D:/Source/DotNet/ParkingRepairSystemKAO/Systemmaster.aspx" hash="9a2f2516e" filehash="f36afb00a906c1e5" flags="110000" assembly="App_Web_kugghpdz" type="ASP.systemmaster_aspx">
+    <filedeps>
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/Systemmaster.aspx" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/Systemmaster.aspx.cs" />
+    </filedeps>
+</preserve>

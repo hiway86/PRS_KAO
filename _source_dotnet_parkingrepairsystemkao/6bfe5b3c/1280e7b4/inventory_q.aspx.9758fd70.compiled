@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/D:/Source/DotNet/ParkingRepairSystemKAO/Inventory/InvenTory_Q.aspx" hash="9a2f2516e" filehash="7fd24809277a2358" flags="110000" assembly="App_Web_0jpjlz4f" type="ASP.inventory_inventory_q_aspx">
+    <filedeps>
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/checkpass.inc" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/Inventory/InvenTory_Q.aspx" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/Inventory/InvenTory_Q.aspx.cs" />
+    </filedeps>
+</preserve>

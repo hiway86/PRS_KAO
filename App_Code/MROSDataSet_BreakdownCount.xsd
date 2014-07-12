@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MROSDataSet_BreakdownCount" targetNamespace="http://tempuri.org/MROSDataSet_BreakdownCount.xsd" xmlns:mstns="http://tempuri.org/MROSDataSet_BreakdownCount.xsd" xmlns="http://tempuri.org/MROSDataSet_BreakdownCount.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="MROSConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="MROSConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.MROSConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_BreakDownCountsTableAdapter" Name="View_BreakDownCounts">
+            <MainSource>
+              <DbSource ConnectionRef="MROSConnectionString (Web.config)" DbObjectName="MROS.dbo.View_BreakDownCounts" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Device_ID, counts, Expr1, DeviceModel, DeviceModelName, Region, RegionName, SectorName, TCModel, DeviceContractID, ContractName, DeviceStatus, DeviceNote, DevicePhoto, Longitude, Latitude, ContractEndDate, ContractStartDate FROM dbo.View_BreakDownCounts</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Device_ID" DataSetColumn="Device_ID" />
+              <Mapping SourceColumn="counts" DataSetColumn="counts" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+              <Mapping SourceColumn="DeviceModel" DataSetColumn="DeviceModel" />
+              <Mapping SourceColumn="DeviceModelName" DataSetColumn="DeviceModelName" />
+              <Mapping SourceColumn="Region" DataSetColumn="Region" />
+              <Mapping SourceColumn="RegionName" DataSetColumn="RegionName" />
+              <Mapping SourceColumn="SectorName" DataSetColumn="SectorName" />
+              <Mapping SourceColumn="TCModel" DataSetColumn="TCModel" />
+              <Mapping SourceColumn="DeviceContractID" DataSetColumn="DeviceContractID" />
+              <Mapping SourceColumn="ContractName" DataSetColumn="ContractName" />
+              <Mapping SourceColumn="DeviceStatus" DataSetColumn="DeviceStatus" />
+              <Mapping SourceColumn="DeviceNote" DataSetColumn="DeviceNote" />
+              <Mapping SourceColumn="DevicePhoto" DataSetColumn="DevicePhoto" />
+              <Mapping SourceColumn="Longitude" DataSetColumn="Longitude" />
+              <Mapping SourceColumn="Latitude" DataSetColumn="Latitude" />
+              <Mapping SourceColumn="ContractEndDate" DataSetColumn="ContractEndDate" />
+              <Mapping SourceColumn="ContractStartDate" DataSetColumn="ContractStartDate" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="MROSDataSet_BreakdownCount" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="False">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="View_BreakDownCounts">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Device_ID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="counts" type="xs:int" minOccurs="0" />
+              <xs:element name="Expr1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeviceModel" type="xs:int" minOccurs="0" />
+              <xs:element name="DeviceModelName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Region" type="xs:int" minOccurs="0" />
+              <xs:element name="RegionName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SectorName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TCModel" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeviceContractID" type="xs:int" minOccurs="0" />
+              <xs:element name="ContractName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeviceStatus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeviceNote" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DevicePhoto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Longitude" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Latitude" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ContractEndDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ContractStartDate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:View_BreakDownCounts" />
+      <xs:field xpath="mstns:Expr1" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

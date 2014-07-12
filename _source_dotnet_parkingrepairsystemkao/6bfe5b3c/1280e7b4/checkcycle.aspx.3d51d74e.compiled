@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/D:/Source/DotNet/ParkingRepairSystemKAO/MIS/CheckCycle.aspx" hash="9a2f2516e" filehash="53d2407618a1ec27" flags="110000" assembly="App_Web_jkbqqdxf" type="ASP.mis_checkcycle_aspx">
+    <filedeps>
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/checkpass.inc" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/MIS/CheckCycle.aspx" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/MIS/CheckCycle.aspx.cs" />
+    </filedeps>
+</preserve>

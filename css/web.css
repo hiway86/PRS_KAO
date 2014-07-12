@@ -1,0 +1,675 @@
+﻿body
+{
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    background-repeat:repeat; 
+   background-position:left bottom; 
+   background-image: url(  '../images/main_bg.jpg' );
+   background-attachment: fixed;
+}
+
+table
+{
+    font-size: 10pt;
+}
+
+.fieldsetText
+{
+    color: blue;
+    font-size: 11pt;
+    font-weight: bold;
+}
+
+
+.gridview
+{
+    border-style: inset;
+    border-width: 1px;
+    background-color: #FCFCF9;
+    cursor: default;
+}
+
+.gridheader
+{
+    background-color: #CCC7BA;
+    border-style: outset;
+    border-left: 1px solid buttonhighlight;
+    border-right: 1px solid buttonshadow;
+    border-top: 1px solid buttonhighlight;
+    border-bottom: 1px solid buttonshadow;
+    font-size: 10.5pt;
+    color: black;
+}
+
+
+
+.gridviewrow
+{
+    border-width: 1px;
+    background-color: #FFFFFF;
+}
+
+.gridviewrowSelected
+{
+    background-color: #FFFFFF;
+    border-top: 1px solid #004596; /*上框線*/
+    border-bottom: 1px solid #004596; /*下框線*/
+    border-left: 1px solid #004596; /*左框線*/
+    border-right: 1px solid #004596; /*右框線*/
+}
+
+
+a.tablecelllink:link
+{
+    font-size: 11pt;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    cursor: default;
+    background-color: #F2F0E6;
+    border-top: 1px solid #F2F0E6; /*上框線*/
+    border-bottom: 1px solid #F2F0E6; /*下框線*/
+    border-left: 1px solid #F2F0E6; /*左框線*/
+    border-right: 1px solid #F2F0E6; /*右框線*/
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+a.tablecelllink:visited
+{
+    font-size: 11pt;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    cursor: default;
+    background-color: #F2F0E6;
+    border-top: 1px solid #F2F0E6; /*上框線*/
+    border-bottom: 1px solid #F2F0E6; /*下框線*/
+    border-left: 1px solid #F2F0E6; /*左框線*/
+    border-right: 1px solid #F2F0E6; /*右框線*/
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+a.tablecelllink:hover
+{
+    font-size: 11pt;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    cursor: default;
+    background-color: #C0D6F4;
+    border-top: 1px solid #004596; /*上框線*/
+    border-bottom: 1px solid #004596; /*下框線*/
+    border-left: 1px solid #004596; /*左框線*/
+    border-right: 1px solid #004596; /*右框線*/
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+a.tablecelllink:active
+{
+}
+
+
+.newbtn
+{
+    font-size: 11pt;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    cursor: default;
+    background-color: #F2F0E6;
+    border-top: 1px solid #F2F0E6; /*上框線*/
+    border-bottom: 1px solid #F2F0E6; /*下框線*/
+    border-left: 1px solid #F2F0E6; /*左框線*/
+    border-right: 1px solid #F2F0E6; /*右框線*/
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+
+
+
+
+
+
+.menuBar
+{
+    background-color: #F2F0E6;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    border-left: 1px solid buttonhighlight;
+    border-right: 1px solid buttonshadow;
+    border-top: 1px solid buttonhighlight;
+    border-bottom: 1px solid buttonshadow;
+}
+
+.AddimgButton
+{
+    font-size: 11pt;
+    font-family:微軟正黑體;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    color: black;
+    cursor: default;
+    background-image: url(../images/addnew.gif);
+    background-repeat: no-repeat;
+    background-color: #F2F0E6;
+    border-top: 1px solid #F2F0E6; /*上框線*/
+    border-bottom: 1px solid #F2F0E6; /*下框線*/
+    border-left: 1px solid #F2F0E6; /*左框線*/
+    border-right: 1px solid #F2F0E6; /*右框線*/
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+.AddimgButton:hover
+{
+    font-size: 11pt;
+    font-family: 微軟正黑體;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    color: black;
+    cursor: default;
+    background-image: url(../images/addnew.gif);
+    background-repeat: no-repeat;
+    background-color: #C0D6F4;
+    border-top: 1px solid #004596; /*上框線*/
+    border-bottom: 1px solid #004596; /*下框線*/
+    border-left: 1px solid #004596; /*左框線*/
+    border-right: 1px solid #004596; /*右框線*/
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+.EditimgButton
+{
+    font-size: 11pt;
+    font-family: 微軟正黑體;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    color: black;
+    cursor: default;
+    background-image: url(../images/edit.gif);
+    background-repeat: no-repeat;
+    background-color: #F2F0E6;
+    border-top: 1px solid #F2F0E6; /*上框線*/
+    border-bottom: 1px solid #F2F0E6; /*下框線*/
+    border-left: 1px solid #F2F0E6; /*左框線*/
+    border-right: 1px solid #F2F0E6; /*右框線*/
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+.EditimgButton:hover
+{
+    font-size: 11pt;
+    font-family: 微軟正黑體;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    color: black;
+    cursor: default;
+    background-image: url(../images/edit.gif);
+    background-repeat: no-repeat;
+    background-color: #C0D6F4;
+    border-top: 1px solid #004596; /*上框線*/
+    border-bottom: 1px solid #004596; /*下框線*/
+    border-left: 1px solid #004596; /*左框線*/
+    border-right: 1px solid #004596; /*右框線*/
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+.DeleteimgButton
+{
+    font-size: 11pt;
+    font-family: 微軟正黑體;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    color: black;
+    cursor: default;
+    background-image: url(../images/delete.gif);
+    background-repeat: no-repeat;
+    background-color: #F2F0E6;
+    border-top: 1px solid #F2F0E6; /*上框線*/
+    border-bottom: 1px solid #F2F0E6; /*下框線*/
+    border-left: 1px solid #F2F0E6; /*左框線*/
+    border-right: 1px solid #F2F0E6; /*右框線*/
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+.DeleteimgButton:hover
+{
+    font-size: 11pt;
+    font-family: 微軟正黑體;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    color: black;
+    cursor: default;
+    background-image: url(../images/delete.gif);
+    background-repeat: no-repeat;
+    background-color: #C0D6F4;
+    border-top: 1px solid #004596; /*上框線*/
+    border-bottom: 1px solid #004596; /*下框線*/
+    border-left: 1px solid #004596; /*左框線*/
+    border-right: 1px solid #004596; /*右框線*/
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+.SentimgButton
+{
+    font-size: 11pt;
+    font-family: 微軟正黑體;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    color: black;
+    cursor: default;
+    background-image: url(../images/sent.png);
+    background-repeat: no-repeat;
+    background-color: #F2F0E6;
+    border-top: 1px solid #F2F0E6; /*上框線*/
+    border-bottom: 1px solid #F2F0E6; /*下框線*/
+    border-left: 1px solid #F2F0E6; /*左框線*/
+    border-right: 1px solid #F2F0E6; /*右框線*/
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+.SentimgButton:hover
+{
+    font-size: 11pt;
+    font-family: 微軟正黑體;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    color: black;
+    cursor: default;
+    background-image: url(../images/sent.png);
+    background-repeat: no-repeat;
+    background-color: #C0D6F4;
+    border-top: 1px solid #004596; /*上框線*/
+    border-bottom: 1px solid #004596; /*下框線*/
+    border-left: 1px solid #004596; /*左框線*/
+    border-right: 1px solid #004596; /*右框線*/
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+.ExitimgButton
+{
+    font-size: 11pt;
+    font-family: 微軟正黑體;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    color: black;
+    cursor: default;
+    background-image: url(../images/exit.png);
+    background-repeat: no-repeat;
+    background-color: #F2F0E6;
+    border-top: 1px solid #F2F0E6; /*上框線*/
+    border-bottom: 1px solid #F2F0E6; /*下框線*/
+    border-left: 1px solid #F2F0E6; /*左框線*/
+    border-right: 1px solid #F2F0E6; /*右框線*/
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+.ExitimgButton:hover
+{
+    font-size: 11pt;
+    font-family: 微軟正黑體;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    color: black;
+    cursor: default;
+    background-image: url(../images/exit.png);
+    background-repeat: no-repeat;
+    background-color: #C0D6F4;
+    border-top: 1px solid #004596; /*上框線*/
+    border-bottom: 1px solid #004596; /*下框線*/
+    border-left: 1px solid #004596; /*左框線*/
+    border-right: 1px solid #004596; /*右框線*/
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+
+.SearchimgButton
+{
+    font-size: 11pt;
+    font-family: 微軟正黑體;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    color: black;
+    cursor: default;
+    background-image: url(../images/search.gif);
+    background-repeat: no-repeat;
+    background-color: #F2F0E6;
+    border-top: 1px solid #F2F0E6; /*上框線*/
+    border-bottom: 1px solid #F2F0E6; /*下框線*/
+    border-left: 1px solid #F2F0E6; /*左框線*/
+    border-right: 1px solid #F2F0E6; /*右框線*/
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+.SearchimgButton:hover
+{
+    font-size: 11pt;
+    font-family: 微軟正黑體;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    color: black;
+    cursor: default;
+    background-image: url(../images/search.gif);
+    background-repeat: no-repeat;
+    background-color: #C0D6F4;
+    border-top: 1px solid #004596; /*上框線*/
+    border-bottom: 1px solid #004596; /*下框線*/
+    border-left: 1px solid #004596; /*左框線*/
+    border-right: 1px solid #004596; /*右框線*/
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+.CopyimgButton
+{
+    font-size: 11pt;
+    font-family: 微軟正黑體;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    color: black;
+    cursor: default;
+    background-image: url(../images/copy.gif);
+    background-repeat: no-repeat;
+    background-color: #F2F0E6;
+    border-top: 1px solid #F2F0E6; /*上框線*/
+    border-bottom: 1px solid #F2F0E6; /*下框線*/
+    border-left: 1px solid #F2F0E6; /*左框線*/
+    border-right: 1px solid #F2F0E6; /*右框線*/
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+.CopyimgButton:hover
+{
+    font-size: 11pt;
+    font-family: 微軟正黑體;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    color: black;
+    cursor: default;
+    background-image: url(../images/copy.gif);
+    background-repeat: no-repeat;
+    background-color: #C0D6F4;
+    border-top: 1px solid #004596; /*上框線*/
+    border-bottom: 1px solid #004596; /*下框線*/
+    border-left: 1px solid #004596; /*左框線*/
+    border-right: 1px solid #004596; /*右框線*/
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+.PrintimgButton
+{
+    font-size: 11pt;
+    font-family: 微軟正黑體;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    color: black;
+    cursor: default;
+    background-image: url(../images/print.gif);
+    background-repeat: no-repeat;
+    background-color: #F2F0E6;
+    border-top: 1px solid #F2F0E6; /*上框線*/
+    border-bottom: 1px solid #F2F0E6; /*下框線*/
+    border-left: 1px solid #F2F0E6; /*左框線*/
+    border-right: 1px solid #F2F0E6; /*右框線*/
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+.PrintimgButton:hover
+{
+    font-size: 11pt;
+    font-family: 微軟正黑體;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    color: black;
+    cursor: default;
+    background-image: url(../images/print.gif);
+    background-repeat: no-repeat;
+    background-color: #C0D6F4;
+    border-top: 1px solid #004596; /*上框線*/
+    border-bottom: 1px solid #004596; /*下框線*/
+    border-left: 1px solid #004596; /*左框線*/
+    border-right: 1px solid #004596; /*右框線*/
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+.CancelimgButton
+{
+    font-size: 11pt;
+    font-family: 微軟正黑體;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    color: black;
+    cursor: default;
+    background-image: url(../images/cancel.gif);
+    background-repeat: no-repeat;
+    background-color: #F2F0E6;
+    border-top: 1px solid #F2F0E6; /*上框線*/
+    border-bottom: 1px solid #F2F0E6; /*下框線*/
+    border-left: 1px solid #F2F0E6; /*左框線*/
+    border-right: 1px solid #F2F0E6; /*右框線*/
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+.CancelimgButton:hover
+{
+    font-size: 11pt;
+    font-family: 微軟正黑體;
+    vertical-align: middle;
+    text-align: center;
+    vertical-align: top;
+    text-decoration: none;
+    color: black;
+    cursor: default;
+    background-image: url(../images/cancel.gif);
+    background-repeat: no-repeat;
+    background-color: #C0D6F4;
+    border-top: 1px solid #004596; /*上框線*/
+    border-bottom: 1px solid #004596; /*下框線*/
+    border-left: 1px solid #004596; /*左框線*/
+    border-right: 1px solid #004596; /*右框線*/
+    padding-top: 2px;
+    padding-left: 2px;
+}
+
+.handin
+{
+    height: 20px;
+    width: 2px;
+    border-left: 1px solid buttonshadow;
+    border-right: 1px solid buttonhighlight;
+}
+
+/*Modal Popup*/
+.modalBackground
+{
+    background-color: Gray;
+    filter: alpha(opacity=70);
+    opacity: 0.7;
+}
+
+
+.ISP_tdStrong
+{
+    font-weight: bold;
+    color: Navy;
+    text-align: center;
+    background-color: #e7e7ff;
+    height: 20px;
+}
+
+.FixedTitleRow
+{
+    position: relative;
+    table-layout: fixed;
+    top: expression(this.offsetParent.scrollTop-2);
+    background-color: White;
+    z-index: 10;
+}
+
+.FixedTitleRow th
+{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 2px;
+}
+
+.FixedTitleColumn
+{
+    position: relative;
+    left: expression(this.parentElement.offsetParent.scrollLeft-2);
+}
+
+.FixedDataColumn
+{
+    position: relative;
+    left: expression(this.parentElement.offsetParent.offsetParent.scrollLeft-2);
+}
+
+.gridviewhiddenrow
+{
+    background-color: #FF0000;
+    display: none;
+}
+.redWord
+{
+    color: Red;
+}
+
+.clearFieldBlurred
+{
+    color: #666;
+    font-style: italic;
+}
+.clearFieldActive
+{
+    color: #000;
+}
+
+.title_bar
+{
+    font-size:larger;
+    font-weight:bolder;
+}
+
+.dialog_time
+{
+    height:30px;
+    width:40px;
+    font-size:30px;
+    vertical-align:middle;
+}
+
+.fixedCenter{  
+  position:fixed;
+  top:50%;
+  left:50%;  
+  _position: absolute; /* position fixed for IE6 */
+  _top:expression(documentElement.scrollTop+(documentElement.clientHeight-this.clientHeight)/2);
+  _margin-top:0;
+  z-index:999999999;
+}
+
+.progressBackgroundLayer
+        {
+            position: fixed;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            background-color: #e5e5e5;
+            filter: alpha(opacity=30);
+            opacity: 0.5;
+            z-index: 1000;
+        }
+
+#gv
+{
+	width:98%;
+}
+
+#gv2
+{
+	width:98%;
+}
+
+#gv3
+{
+	width:98%;
+}
+
+#gv_MaterialShow 
+{
+width:98%;
+}
+
+#SearchPanel
+{
+	width:98%;
+}
+
+table tbody tr th {
+    background-color :#3399ff;
+}

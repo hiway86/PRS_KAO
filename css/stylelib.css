@@ -1,0 +1,257 @@
+﻿.cssBtn1
+{
+    border: 1px solid #7b9ebd;
+    padding-right: 2px;
+        padding-left: 2px;
+        FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#cecfde);
+        cursor: hand;
+        color: black;
+        padding-top: 2px;
+        height: 21px;
+}
+
+.cssBtn1mouseover
+{
+    border-right: #7b9ebd 1px solid;
+    padding-right: 2px;
+    border-top: #7b9ebd 1px solid;
+    padding-left: 2px;
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#B3D997);
+    border-left: #7b9ebd 1px solid;
+    cursor: hand;
+    color: black;
+    padding-top: 2px;
+    border-bottom: #7b9ebd 1px solid;
+}
+
+.cssBtn2
+{
+    border: 1px solid #2c59aa;
+	padding-right: 2px;
+    	padding-left: 2px;
+    	FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#C3DAF5);
+    	cursor: hand;
+    	color: black;
+    	padding-top: 2px;
+    	height: 21px;
+}
+
+.cssBtn2mouseover
+{
+    border-right: #7b9ebd 1px solid;
+    padding-right: 2px;
+    border-top: #7b9ebd 1px solid;
+    padding-left: 2px;
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#CAE4B6);
+    border-left: #7b9ebd 1px solid;
+    cursor: hand;
+    color: black;
+    padding-top: 2px;
+    border-bottom: #7b9ebd 1px solid;
+}
+
+.cssBtn3
+{
+    border-right: #00CCCC 1px solid;
+    padding-right: 2px;
+    border-top: #00CCCC 1px solid;
+    padding-left: 2px;
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#d8d8bf);
+    border-left: #00CCCC 1px solid;
+    cursor: hand;
+    color: black;
+    padding-top: 2px;
+    border-bottom: #00CCCC 1px solid;
+}
+
+.cssBtn3mouseover
+{
+    border-right: #3333CC 1px solid;
+    padding-right: 2px;
+    border-top: #3333CC 1px solid;
+    padding-left: 2px;
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#d8d8bf, EndColorStr=#FFFFFF);
+    border-left: #3333CC 1px solid;
+    cursor: hand;
+    color: black;
+    padding-top: 2px;
+    border-bottom: #3333CC 1px solid;
+}
+
+.cssBtn4
+{
+    border-right: #7b9ebd 1px solid;
+    padding-right: 2px;
+    border-top: #7b9ebd 1px solid;
+    padding-left: 2px;
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#8fbc8f);
+    border-left: #7b9ebd 1px solid;
+    cursor: hand;
+    color: black;
+    padding-top: 2px;
+    border-bottom: #7b9ebd 1px solid;
+}
+
+.cssBtn4mouseover
+{
+    border-right: #7b9ebd 1px solid;
+    padding-right: 2px;
+    border-top: #7b9ebd 1px solid;
+    padding-left: 2px;
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#8fbc8f, EndColorStr=#ffffff);
+    border-left: #7b9ebd 1px solid;
+    cursor: hand;
+    color: black;
+    padding-top: 2px;
+    border-bottom: #7b9ebd 1px solid;
+}
+
+.cssHref1
+{
+    background-color: #ff6600;
+    border: 1px #ff6600 outset;
+    padding: 0 2px;
+    color: Blue;
+    text-decoration: none;
+    font: bold 10px Verdana;
+}
+
+.cssHref1:visited, .cssHref1:hover, .cssHref1:active
+{
+    color: white;
+}
+
+.cssHref2
+{
+    background-color: #d1ec4c;
+    border: 2px #d1ec4c outset;
+    padding: 1px 4px;
+    color: black;
+    text-decoration: none;
+    font: bold 90% "Lucida Grande" , "Trebuchet MS" , Verdana, Helvetica, sans-serif;
+}
+
+.cssHref2:visited
+{
+    color: black;
+}
+
+.cssHref2:hover
+{
+    border-style: inset;
+    background-color: #e3f48e;
+    padding: 2px 3px 0 5px; /*shift text 1px to the right and down*/
+}
+
+.cssHref2:active
+{
+    color: black;
+}
+
+
+
+
+a.squarebutton
+{
+    background: transparent url(  '../images/cssimage/square-gray-left.gif' ) no-repeat top left;
+    display: block;
+    float: left;
+    font: normal 12px Arial; /* Change 12px as desired */
+    line-height: 15px; /* This value + 4px + 4px (top and bottom padding of SPAN) must equal height of button background (default is 23px) */
+    height: 23px; /* Height of button background height */
+    padding-left: 9px; /* Width of left menu image */
+    text-decoration: none;
+}
+
+a:link.squarebutton, a:visited.squarebutton, a:active.squarebutton
+{
+    color: #494949; /*button text color*/
+}
+
+a.squarebutton span
+{
+    background: transparent url(  '../images/cssimage/square-gray-right.gif' ) no-repeat top right;
+    display: block;
+    padding: 4px 9px 4px 0; /*Set 9px below to match value of 'padding-left' value above*/
+}
+
+a.squarebutton:hover
+{
+    /* Hover state CSS */
+    background-position: bottom left;
+}
+
+a.squarebutton:hover span
+{
+    /* Hover state CSS */
+    background-position: bottom right;
+    color: black;
+}
+
+.buttonwrapper
+{
+    /* Container you can use to surround a CSS button to clear float */
+    overflow: hidden; /*See: http://www.quirksmode.org/css/clearing.html */
+    width: 100%;
+}
+
+a.boldbuttons
+{
+    background: transparent url( '../images/cssimage/roundedge-gray-left.gif' ) no-repeat top left;
+    display: block;
+    float: left;
+    font: bold 13px Arial; /* Change 13px as desired */
+    line-height: 22px; /* This value + 4px + 4px (top and bottom padding of SPAN) must equal height of button background (default is 30px) */
+    height: 30px; /* Height of button background height */
+    padding-left: 8px; /* Width of left menu image */
+    text-decoration: none;
+}
+
+a:link.boldbuttons, a:visited.boldbuttons, a:hover.boldbuttons, a:active.boldbuttons
+{
+    color: white; /*button text color*/
+}
+
+a.boldbuttons span
+{
+    background: transparent url( '../images/cssimage/roundedge-gray-right.gif' ) no-repeat top right;
+    display: block;
+    padding: 4px 10px 4px 2px; /*Set 10px to be equal or greater than'padding-left' value above*/
+}
+
+a:hover.boldbuttons
+{
+    /* Hover state CSS */
+    text-decoration: underline;
+}
+
+
+a.ovalbutton{
+background: transparent url('../images/cssimage/oval-gray-left.gif') no-repeat top left;
+display: block;
+float: left;
+font: normal 13px Tahoma; /* Change 13px as desired */
+line-height: 16px; /* This value + 4px + 4px (top and bottom padding of SPAN) must equal height of button background (default is 24px) */
+height: 24px; /* Height of button background height */
+padding-left: 11px; /* Width of left menu image */
+text-decoration: none;
+}
+
+a:link.ovalbutton, a:visited.ovalbutton, a:active.ovalbutton{
+color: #494949; /*button text color*/
+}
+
+a.ovalbutton span{
+background: transparent url('../images/cssimage/oval-gray-right.gif') no-repeat top right;
+display: block;
+padding: 4px 11px 4px 0; /*Set 11px below to match value of 'padding-left' value above*/
+}
+
+a.ovalbutton:hover{ /* Hover state CSS */
+background-position: bottom left;
+}
+
+a.ovalbutton:hover span{ /* Hover state CSS */
+background-position: bottom right;
+color: black;
+}

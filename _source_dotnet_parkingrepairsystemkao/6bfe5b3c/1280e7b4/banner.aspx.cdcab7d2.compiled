@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/D:/Source/DotNet/ParkingRepairSystemKAO/banner.aspx" hash="9a2f2516e" filehash="cfae287567c97664" flags="110000" assembly="App_Web_kugghpdz" type="ASP.banner_aspx">
+    <filedeps>
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/banner.aspx" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/banner.aspx.cs" />
+    </filedeps>
+</preserve>

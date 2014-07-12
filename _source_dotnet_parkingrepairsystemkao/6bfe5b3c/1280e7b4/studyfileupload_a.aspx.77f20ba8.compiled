@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/D:/Source/DotNet/ParkingRepairSystemKAO/Statistics/StudyFileUpload_A.aspx" hash="9a2f2516e" filehash="785a03acb8f49398" flags="110000" assembly="App_Web_adghwhjp" type="ASP.statistics_studyfileupload_a_aspx">
+    <filedeps>
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/checkpass.inc" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/Statistics/StudyFileUpload_A.aspx" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/Statistics/StudyFileUpload_A.aspx.cs" />
+    </filedeps>
+</preserve>

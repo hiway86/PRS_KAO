@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="2" virtualPath="/D:/Source/DotNet/ParkingRepairSystemKAO/MISWebService.asmx" hash="ffffffffb64c6f15" filehash="ffffc411c0c66e23" flags="130000" assembly="App_Code" type="MISWebService">
+    <filedeps>
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/MISWebService.asmx" />
+    </filedeps>
+</preserve>

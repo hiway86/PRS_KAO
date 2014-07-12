@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/D:/Source/DotNet/ParkingRepairSystemKAO/Index.aspx" hash="9a2f2516e" filehash="6798c86ca4ceb2cc" flags="110000" assembly="App_Web_lb5glk2t" type="ASP.index_aspx">
+    <filedeps>
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/Index.aspx" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/Index.aspx.cs" />
+    </filedeps>
+</preserve>

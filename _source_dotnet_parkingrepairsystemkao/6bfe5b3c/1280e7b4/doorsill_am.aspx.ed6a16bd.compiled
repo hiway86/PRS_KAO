@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/D:/Source/DotNet/ParkingRepairSystemKAO/VDCheck/DoorSill_AM.aspx" hash="9a2f2516e" filehash="fd2e2e80aa2197ba" flags="110000" assembly="App_Web_djbxjoer" type="ASP.vdcheck_doorsill_am_aspx">
+    <filedeps>
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/checkpass.inc" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/VDCheck/DoorSill_AM.aspx" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/VDCheck/DoorSill_AM.aspx.cs" />
+    </filedeps>
+</preserve>

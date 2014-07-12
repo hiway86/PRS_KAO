@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/D:/Source/DotNet/ParkingRepairSystemKAO/testchart.aspx" hash="9a2f2516e" filehash="5b6b672e3052d792" flags="110000" assembly="App_Web_kugghpdz" type="ASP.testchart_aspx">
+    <filedeps>
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/testchart.aspx" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/testchart.aspx.cs" />
+    </filedeps>
+</preserve>

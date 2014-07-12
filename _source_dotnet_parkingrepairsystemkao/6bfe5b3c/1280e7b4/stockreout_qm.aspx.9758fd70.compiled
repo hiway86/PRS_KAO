@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/D:/Source/DotNet/ParkingRepairSystemKAO/Inventory/StockReOut_QM.aspx" hash="9a2f2516e" filehash="ba778dab47555c6" flags="110000" assembly="App_Web_lm25o2vh" type="ASP.inventory_stockreout_qm_aspx">
+    <filedeps>
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/checkpass.inc" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/Inventory/StockReOut_QM.aspx" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/Inventory/StockReOut_QM.aspx.cs" />
+    </filedeps>
+</preserve>

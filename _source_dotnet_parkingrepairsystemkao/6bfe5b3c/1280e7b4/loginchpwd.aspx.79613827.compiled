@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/D:/Source/DotNet/ParkingRepairSystemKAO/System/Loginchpwd.aspx" hash="9a2f2516e" filehash="6b6dd1ee74b7fc6" flags="110000" assembly="App_Web_1rj3kqul" type="ASP.system_loginchpwd_aspx">
+    <filedeps>
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/System/Loginchpwd.aspx" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/System/Loginchpwd.aspx.cs" />
+    </filedeps>
+</preserve>

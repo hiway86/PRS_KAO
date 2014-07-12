@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<preserve resultType="3" virtualPath="/D:/Source/DotNet/ParkingRepairSystemKAO/MIS/mapViewer.aspx" hash="9a2f2516e" filehash="c9414b93a10d82f3" flags="110000" assembly="App_Web_jkbqqdxf" type="ASP.mis_mapviewer_aspx">
+    <filedeps>
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/MIS/mapViewer.aspx" />
+        <filedep name="/D:/Source/DotNet/ParkingRepairSystemKAO/MIS/mapViewer.aspx.cs" />
+    </filedeps>
+</preserve>
